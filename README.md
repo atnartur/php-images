@@ -2,10 +2,15 @@
 
 Docker images for working with PHP.
 
-## Tags
+[Docker Hub](https://hub.docker.com/r/atnartur/php/)
 
-- `5.6-fpm-phalcon2.0.13`
-- `7.0.11-fpm-phalcon3.0.1`
+## Docker pull
+
+```
+docker pull atnartur/php:7.0.11-fpm-phalcon3.0.1
+```
+
+[Full list of tags](https://hub.docker.com/r/atnartur/php/tags/)
 
 ## Build
 

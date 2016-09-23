@@ -10,7 +10,7 @@ RUN apt-get update && \
 	git clone --depth=1 git://github.com/phalcon/cphalcon.git && \ 
 	cd cphalcon && \
 	git fetch --tags && \
-	git checkout phalcon-v2.0.13 && \
+	git checkout v3.0.1 && \
 	cd build && \
 	./install && \
 
