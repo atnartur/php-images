@@ -14,16 +14,12 @@ RUN apt-get update && \
 		pdo_mysql \
 		zip && \
 
-	git clone --depth=1 git://github.com/phalcon/cphalcon.git && \ 
-	cd cphalcon && \
-	git fetch --tags && \
-	git checkout v3.0.1 && \
-	cd build && \
+	git clone -b v3.0.1 --single-branch git://github.com/phalcon/cphalcon.git && \ 
+	cd cphalcon/build && \
 	./install && \
+	docker-php-ext-enable phalcon && \
 
 	cd ../../ && \
 	rm -r cphalcon && \
 	apt-get clean && \
 	rm -r /var/lib/apt/lists/*
-
-COPY ./phalcon.ini /usr/local/etc/php/conf.d/
