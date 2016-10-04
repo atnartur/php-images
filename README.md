@@ -1,4 +1,4 @@
-# PHP phalcon image
+# PHP images
 
 Docker images for working with PHP.
 
