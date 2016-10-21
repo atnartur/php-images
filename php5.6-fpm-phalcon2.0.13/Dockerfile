@@ -14,6 +14,5 @@ RUN apt-get update && \
 
 	cd ../../ && \
 	rm -r cphalcon && \
-	apt-get purge git -y && \
 	apt-get clean && \
 	rm -r /var/lib/apt/lists/*
