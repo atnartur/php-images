@@ -3,9 +3,9 @@ FROM php:5.6-fpm
 MAINTAINER Artur Atnagulov <i@atnartur.ru>
 
 RUN apt-get update && \
-	apt-get install git -y && \
+	apt-get install zlib1g-dev git -y && \
 
-	docker-php-ext-install pdo_mysql && \
+	docker-php-ext-install pdo_mysql zip && \
 
 	git clone -b phalcon-v2.0.13 --single-branch git://github.com/phalcon/cphalcon.git && \ 
 	cd cphalcon/build && \
