@@ -9,6 +9,12 @@ RUN apt-get update && \
 
 	git clone -b phalcon-v2.0.13 --single-branch git://github.com/phalcon/cphalcon.git && \ 
 	cd cphalcon/build && \
+	sed -i 's/-march=native/-march=x86-64/g' install && \
+	sed -i 's/-mtune=native/-mtune=generic/g' install && \
+
+	echo '#!/bin/sh\n\
+-march=x86-64 -mtune=generic'\
+>> gcccpuopt && \
 	./install && \
 	docker-php-ext-enable phalcon && \
 
