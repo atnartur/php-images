@@ -1,4 +1,4 @@
-FROM php:7.0.11-fpm
+FROM php:7.0-fpm
 
 MAINTAINER Artur Atnagulov <i@atnartur.ru>
 
@@ -13,12 +13,7 @@ RUN apt-get update && \
 		pdo_pgsql \
 		pdo_mysql \
 		zip && \
-
-	docker-php-ext-enable \
-		pdo_pgsql \
-		pdo_mysql \
-		zip && \
-
+		
 	apt-get clean && \
 	rm -r /var/lib/apt/lists/*
 
