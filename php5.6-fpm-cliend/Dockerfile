@@ -8,12 +8,14 @@ RUN apt-get update && \
 		zlib1g-dev \
 		git \
 		mysql-client \
-		libmysqlclient-dev && \
+		libmysqlclient-dev \
+		php5-mysqlnd && \
 	docker-php-ext-install \
 		pdo_mysql \
 		curl \
 		mysqli \
-		mysql \
 		zip && \
 	apt-get clean && \
 	rm -r /var/lib/apt/lists/*
+
+RUN docker-php-ext-enable mysqli 
